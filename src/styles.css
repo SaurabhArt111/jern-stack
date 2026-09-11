@@ -1,0 +1,629 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;600;700;800&display=swap');
+
+* {
+    box-sizing: border-box
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    margin: 0;
+    background: #e9e7e1;
+    color: #111;
+    font-family: Inter, Arial, sans-serif
+}
+
+a {
+    text-decoration: none;
+    color: inherit
+}
+
+.site {
+    overflow: hidden
+}
+
+.nav {
+    height: 76px;
+    padding: 0 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+    background: rgba(233, 231, 225, .75);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(0, 0, 0, .09)
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 21px;
+    letter-spacing: -.06em
+}
+
+.logo span {
+    font: 9px 'DM Mono';
+    letter-spacing: .15em;
+    margin-left: 7px;
+    color: #777
+}
+
+.navLinks {
+    display: flex;
+    gap: 30px;
+    font: 11px 'DM Mono';
+    color: #666
+}
+
+.navLinks a:hover {
+    color: #111
+}
+
+.creator {
+    font: 10px 'DM Mono';
+    color: #777
+}
+
+.hero {
+    height: 100vh;
+    min-height: 680px;
+    padding: 130px 8vw 55px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+.eyebrow, .sectionIntro>span, .structureCopy>span {
+    font: 10px 'DM Mono';
+    letter-spacing: .17em;
+    color: #777
+}
+
+.hero h1 {
+    font-size: clamp(150px, 31vw, 520px);
+    line-height: .65;
+    letter-spacing: -.12em;
+    margin: 70px 0 100px;
+    display: flex;
+    position: relative;
+    z-index: 2
+}
+
+.hero h1 span {
+    transition: transform .8s cubic-bezier(.2, .8, .2, 1)
+}
+
+.hero h1 span:hover {
+    transform: translateY(-25px) rotate(-4deg)
+}
+
+.hero h1 span:nth-child(2) {
+    font-weight: 400
+}
+
+.hero h1 span:nth-child(3) {
+    font-weight: 800
+}
+
+.hero h1 span:nth-child(4) {
+    font-weight: 400
+}
+
+.heroBottom {
+    display: flex;
+    justify-content: space-between;
+    max-width: 850px;
+    position: relative;
+    z-index: 3
+}
+
+.heroBottom p {
+    max-width: 430px;
+    font-size: 17px;
+    line-height: 1.45;
+    color: #625f58
+}
+
+.scroll {
+    align-self: end;
+    font: 10px 'DM Mono';
+    color: #777
+}
+
+.heroOrb {
+    position: absolute;
+    right: 7vw;
+    top: 27%;
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    border: 1px solid #bcb9b1;
+    display: grid;
+    place-items: center;
+    transform: rotate(12deg)
+}
+
+.heroOrb i {
+    position: absolute;
+    font-style: normal;
+    font-size: 12px;
+    font-family: 'DM Mono'
+}
+
+.heroOrb i:nth-child(1) {
+    transform: translateY(-84px)
+}
+
+.heroOrb i:nth-child(2) {
+    transform: translateX(84px)
+}
+
+.heroOrb i:nth-child(3) {
+    transform: translateY(84px)
+}
+
+.heroOrb i:nth-child(4) {
+    transform: translateX(-84px)
+}
+
+.gallerySection {
+    background: #111;
+    color: #eee;
+    padding: 130px 7vw
+}
+
+.sectionIntro {
+    display: grid;
+    grid-template-columns: 130px 1fr 300px;
+    gap: 35px;
+    align-items: start;
+    margin-bottom: 80px
+}
+
+.sectionIntro>span {
+    color: #777;
+    padding-top: 10px
+}
+
+.sectionIntro h2 {
+    font-size: clamp(55px, 8vw, 120px);
+    line-height: .85;
+    letter-spacing: -.08em;
+    margin: 0
+}
+
+.sectionIntro h2 em {
+    font-weight: 400;
+    color: #777
+}
+
+.sectionIntro p {
+    color: #888;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 7px 0
+}
+
+.gallery {
+    display: flex;
+    gap: 12px;
+    min-width: max-content;
+    padding: 20px 0 100px
+}
+
+.galleryItem {
+    width: min(28vw, 390px);
+    min-width: 290px;
+    height: 540px;
+    border: 1px solid #333;
+    padding: 28px;
+    position: relative;
+    transition: all .55s cubic-bezier(.2, .8, .2, 1);
+    background: #151515;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end
+}
+
+.galleryItem.isActive {
+    background: #eee;
+    color: #111;
+    transform: translateY(-28px)
+}
+
+.galleryLetter {
+    position: absolute;
+    top: 15px;
+    left: 22px;
+    font-size: 180px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -.13em
+}
+
+.galleryMeta {
+    position: absolute;
+    top: 28px;
+    right: 25px;
+    display: flex;
+    gap: 20px;
+    font: 9px 'DM Mono';
+    color: #777
+}
+
+.galleryItem h3 {
+    font-size: 34px;
+    margin: 0 0 10px;
+    letter-spacing: -.06em
+}
+
+.galleryItem p {
+    color: #999;
+    max-width: 280px;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 0 16px
+}
+
+.galleryItem.isActive p {
+    color: #666
+}
+
+.galleryItem small {
+    font: 10px 'DM Mono';
+    color: #666
+}
+
+.statement {
+    padding: 180px 9vw;
+    background: #e9e7e1
+}
+
+.statement h2 {
+    font-size: clamp(55px, 9vw, 130px);
+    letter-spacing: -.08em;
+    line-height: .88;
+    margin: 35px 0
+}
+
+.statement h2 i {
+    font-weight: 400;
+    color: #777
+}
+
+.statement p {
+    max-width: 480px;
+    color: #777
+}
+
+.structure {
+    padding: 140px 7vw
+}
+
+.structureGrid {
+    display: grid;
+    grid-template-columns: 1.35fr .65fr;
+    gap: 30px
+}
+
+.tree {
+    background: #111;
+    color: #ddd;
+    border-radius: 5px;
+    overflow: hidden
+}
+
+.treeTitle {
+    padding: 15px 20px;
+    border-bottom: 1px solid #333;
+    font: 9px 'DM Mono';
+    color: #777
+}
+
+.tree pre {
+    padding: 35px;
+    margin: 0;
+    font: 13px/1.8 'DM Mono';
+    overflow: auto
+}
+
+.structureCopy {
+    padding: 25px 10px
+}
+
+.structureCopy h3 {
+    font-size: 54px;
+    line-height: .9;
+    letter-spacing: -.07em;
+    margin: 25px 0
+}
+
+.structureCopy p {
+    color: #777;
+    max-width: 360px;
+    line-height: 1.6
+}
+
+.miniFlow {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 45px;
+    font: 10px 'DM Mono'
+}
+
+.miniFlow i {
+    font-style: normal;
+    color: #999
+}
+
+.useCases {
+    padding: 130px 0 150px
+}
+
+.useCases .sectionIntro {
+    padding: 0 7vw
+}
+
+.marquee {
+    border-top: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+    overflow: hidden;
+    margin-top: 80px;
+    white-space: nowrap;
+    font-size: clamp(35px, 6vw, 85px);
+    letter-spacing: -.05em
+}
+
+.marquee div {
+    display: inline-block;
+    padding: 30px 0;
+    animation: slide 28s linear infinite
+}
+
+@keyframes slide {
+    to {
+        transform: translateX(-50%)
+    }
+}
+
+.philosophy {
+    background: #111;
+    color: #eee;
+    min-height: 90vh;
+    padding: 150px 7vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+.philosophy .eyebrow {
+    color: #777
+}
+
+.philosophy h2 {
+    font-size: clamp(52px, 9vw, 135px);
+    letter-spacing: -.09em;
+    line-height: .87;
+    margin: 55px 0 110px
+}
+
+.philosophy h2 span {
+    color: #777;
+    font-weight: 400
+}
+
+.signature {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    flex-wrap: wrap
+}
+
+.signature strong {
+    font-size: 35px;
+    letter-spacing: -.07em
+}
+
+.signature span, .signature small {
+    font: 10px 'DM Mono';
+    color: #777
+}
+
+.signature small {
+    width: 100%;
+    margin-top: 5px
+}
+
+.signature small b {
+    color: #aaa
+}
+
+.creatorLinks {
+    padding: 130px 7vw;
+    background: #e9e7e1
+}
+
+.linkCards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: #c8c5bd
+}
+
+.linkCards a {
+    background: #e9e7e1;
+    padding: 35px;
+    min-height: 210px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: .35s
+}
+
+.linkCards a:hover {
+    background: #111;
+    color: #eee
+}
+
+.linkCards span {
+    font: 9px 'DM Mono';
+    color: #777;
+    letter-spacing: .15em
+}
+
+.linkCards strong {
+    font-size: 25px;
+    letter-spacing: -.04em
+}
+
+.linkCards small {
+    font: 11px 'DM Mono';
+    color: #777;
+    max-width: 420px
+}
+
+.linkCards a:hover small {
+    color: #999
+}
+
+footer {
+    background: #111;
+    color: #666;
+    border-top: 1px solid #292929;
+    padding: 30px 7vw;
+    display: flex;
+    justify-content: space-between;
+    font: 9px 'DM Mono';
+    gap: 20px;
+    flex-wrap: wrap
+}
+
+@media(max-width:800px) {
+    .navLinks {
+        display: none
+    }
+
+    .hero {
+        padding: 120px 24px 40px
+    }
+
+    .hero h1 {
+        font-size: 27vw;
+        margin: 80px 0 110px
+    }
+
+    .heroOrb {
+        width: 130px;
+        height: 130px;
+        right: 20px;
+        top: 28%
+    }
+
+    .heroOrb i:nth-child(1) {
+        transform: translateY(-54px)
+    }
+
+    .heroOrb i:nth-child(2) {
+        transform: translateX(54px)
+    }
+
+    .heroOrb i:nth-child(3) {
+        transform: translateY(54px)
+    }
+
+    .heroOrb i:nth-child(4) {
+        transform: translateX(-54px)
+    }
+
+    .heroBottom {
+        display: block
+    }
+
+    .scroll {
+        margin-top: 25px
+    }
+
+    .gallerySection, .structure, .statement, .philosophy {
+        padding-left: 24px;
+        padding-right: 24px
+    }
+
+    .sectionIntro {
+        display: block
+    }
+
+    .sectionIntro>span {
+        display: block;
+        margin-bottom: 30px
+    }
+
+    .sectionIntro p {
+        margin-top: 30px
+    }
+
+    .gallery {
+        overflow: visible;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-width: 0
+    }
+
+    .galleryItem {
+        width: 100%;
+        min-width: 0;
+        height: 430px
+    }
+
+    .galleryLetter {
+        font-size: 110px
+    }
+
+    .structureGrid {
+        grid-template-columns: 1fr
+    }
+
+    .linkCards {
+        grid-template-columns: 1fr
+    }
+
+    .marquee {
+        margin-top: 50px
+    }
+
+    .useCases .sectionIntro {
+        padding: 0 24px
+    }
+
+    .philosophy h2 {
+        margin: 45px 0 80px
+    }
+
+    .signature {
+        gap: 10px
+    }
+}
+
+@media(max-width:520px) {
+    .gallery {
+        grid-template-columns: 1fr
+    }
+
+    .galleryItem {
+        height: 400px
+    }
+
+    .heroOrb {
+        opacity: .5
+    }
+
+    .hero h1 {
+        font-size: 30vw
+    }
+}
